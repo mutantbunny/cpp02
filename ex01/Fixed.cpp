@@ -6,7 +6,7 @@
 /*   By: gmachado <gmachado@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 04:44:48 by gmachado          #+#    #+#             */
-/*   Updated: 2023/11/12 21:14:06 by gmachado         ###   ########.fr       */
+/*   Updated: 2023/11/13 02:03:19 by gmachado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Fixed::Fixed(const int int_value)
 Fixed::Fixed(const float fp_value)
 {
 	std::cout << "Float constructor called" << std::endl;
-	value = (fp_value * (1 << fractional) + (value >= 0 ? 0.5f : -0.5f));
+	value = (fp_value * (1 << fractional) + (fp_value >= 0 ? 0.5f : -0.5f));
 }
 
 Fixed &Fixed::operator=(const Fixed &src)
