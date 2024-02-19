@@ -8,7 +8,7 @@ SRCS = bsp.cpp main.cpp Fixed.cpp Point.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-INCS = Fixed.hpp Point.hpp
+INCS = bsp.hpp Fixed.hpp Point.hpp
 
 all: $(NAME)
 
