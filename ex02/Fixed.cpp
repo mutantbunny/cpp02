@@ -6,7 +6,7 @@
 /*   By: gmachado <gmachado@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 04:44:48 by gmachado          #+#    #+#             */
-/*   Updated: 2023/11/13 03:12:09 by gmachado         ###   ########.fr       */
+/*   Updated: 2024/02/18 20:20:46 by gmachado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,8 @@ Fixed Fixed::operator-(const Fixed &right) const
 Fixed Fixed::operator*(const Fixed &right) const
 {
 	Fixed temp_obj;
-	long int temp_value = ((long int)value * right.getRawBits()) >> fractional;
+	long int factor = 1 << fractional;
+	long int temp_value = ((long int)value * right.getRawBits()) / factor;
 	temp_obj.setRawBits((int)temp_value);
 	return temp_obj;
 }
@@ -75,7 +76,8 @@ Fixed Fixed::operator*(const Fixed &right) const
 Fixed Fixed::operator/(const Fixed &right) const
 {
 	Fixed temp_obj;
-	long int temp_value = ((long int)value << fractional) / right.getRawBits();
+	long int temp_value = (((long int)value) << fractional) /
+		(long int)(right.getRawBits());
 	temp_obj.setRawBits((int)temp_value);
 	return temp_obj;
 }

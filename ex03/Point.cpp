@@ -6,7 +6,7 @@
 /*   By: gmachado <gmachado@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 03:19:13 by gmachado          #+#    #+#             */
-/*   Updated: 2023/11/14 04:11:04 by gmachado         ###   ########.fr       */
+/*   Updated: 2024/02/19 00:06:58 by gmachado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,10 @@ Point::Point(const Point &src): x(src.get_x()),  y(src.get_y()) { }
 
 Point::~Point(void) { }
 
-Point &Point::operator=(__attribute__((unused)) const Point &src)
+Point &Point::operator=(const Point &src)
 {
+	(void)src;
+
 	std::cerr << "Point class cannot use assignment,"
 					" members x and y are constant." << std::endl;
 	return *this;

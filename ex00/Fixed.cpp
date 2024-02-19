@@ -6,7 +6,7 @@
 /*   By: gmachado <gmachado@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 04:44:48 by gmachado          #+#    #+#             */
-/*   Updated: 2023/11/12 05:33:42 by gmachado         ###   ########.fr       */
+/*   Updated: 2024/02/18 01:38:42 by gmachado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,10 @@ Fixed::Fixed(Fixed &src)
 Fixed &Fixed::operator=(Fixed &src)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
+
+	if (this == &src)
+		return *this;
+
 	value = src.getRawBits();
 	return *this;
 }
@@ -43,6 +47,6 @@ int Fixed::getRawBits(void) const
 
 void Fixed::setRawBits(int const raw)
 {
-	value = raw;
 	std::cout << "setRawBits member function called" << std::endl;
+	value = raw;
 }

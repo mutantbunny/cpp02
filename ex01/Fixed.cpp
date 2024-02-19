@@ -6,7 +6,7 @@
 /*   By: gmachado <gmachado@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 04:44:48 by gmachado          #+#    #+#             */
-/*   Updated: 2023/11/13 02:03:19 by gmachado         ###   ########.fr       */
+/*   Updated: 2024/02/18 02:39:11 by gmachado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,10 @@ Fixed::Fixed(const float fp_value)
 Fixed &Fixed::operator=(const Fixed &src)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
+
+	if (this == &src)
+		return *this;
+
 	value = src.getRawBits();
 	return *this;
 }

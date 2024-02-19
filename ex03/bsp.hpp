@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   bsp.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmachado <gmachado@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/09 04:45:00 by gmachado          #+#    #+#             */
-/*   Updated: 2024/02/18 02:39:02 by gmachado         ###   ########.fr       */
+/*   Created: 2024/02/19 00:10:29 by gmachado          #+#    #+#             */
+/*   Updated: 2024/02/19 00:13:40 by gmachado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#ifndef BSP_HPP
+# define BSP_HPP
 
-int main(void)
-{
-	Fixed a;
-	Fixed b(a);
-	Fixed c;
+#include "Point.hpp"
 
-	c = b;
+typedef Point Vector;
 
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
+// bsp.cpp
+bool bsp(Point const a, Point const b, Point const c, Point const point);
+void print_inside(Point const a, Point const b,
+				Point const c, Point const point);
 
-	return 0;
-}
+#endif
